@@ -25,14 +25,12 @@ loc_map = {"back": 0, "lower extremity": 1, "upper extremity": 2}
 # Predict
 
 if st.button("Dự đoán"):
-input_data = np.array([[age, sex_map[sex], loc_map[loc]]])
-input_data = scaler.transform(input_data)
+    input_data = np.array([[age, sex_map[sex], loc_map[loc]]])
+    input_data = scaler.transform(input_data)
 
-```
-pred = model.predict(input_data)[0]
+    pred = model.predict(input_data)[0]
 
-if pred == 1:
-    st.error("⚠️ Nguy cơ ung thư")
-else:
-    st.success("✅ Lành tính")
-```
+    if pred == 1:
+        st.error("⚠️ Nguy cơ ung thư")
+    else:
+        st.success("✅ Lành tính")
